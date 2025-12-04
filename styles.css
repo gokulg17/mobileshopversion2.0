@@ -36,35 +36,48 @@ img {
 /* -------------------------------------------------
    HEADER
 ------------------------------------------------- */
+/* Header auto-hide with fade */
+/* Slim header with auto-hide and fade */
 .site-header {
-    background: #fff;
-    border-bottom: 1px solid #e6e9ef;
-    position: fixed;  /* already fixed for scroll hide */
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 999;
-    transition: top 0.3s ease, padding 0.3s ease;
-    padding: 8px 0; /* make the header slimmer (was 14px) */
+    background: rgba(255, 255, 255, 0.95); /* slightly transparent */
+    border-bottom: 1px solid #e6e9ef;
+    transition: top 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+    padding: 6px 0; /* make header much slimmer */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05); /* subtle shadow for depth */
 }
+
+.site-header.hide {
+    top: -80px;   /* slide header up */
+    opacity: 0;   /* fade out */
+}
+
 .header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 0; /* reduce padding inside */
+    padding: 0 14px; /* reduce inner padding */
 }
 
-
-.nav {
-  display: flex;
-  gap: 24px;
+.brand {
+    font-size: 1rem; /* smaller text size */
+    gap: 6px;        /* reduce gap between logo and text */
 }
+
+.logo {
+    width: 32px;   /* smaller logo */
+    height: 32px;
+}
+
 
 .nav a {
-  text-decoration: none;
-  color: var(--text-light);
-  font-weight: 600;
-  transition: 0.3s;
+    font-size: 0.9rem; /* slightly smaller nav links */
+    padding: 6px 8px;  /* smaller clickable area */
 }
+
 
 .nav a:hover {
   color: var(--accent);
