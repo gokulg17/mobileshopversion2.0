@@ -37,20 +37,22 @@ img {
    HEADER
 ------------------------------------------------- */
 .site-header {
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid #e2e8f0;
-  position: sticky;
-  top: 0;
-  z-index: 99;
+    background: #fff;
+    border-bottom: 1px solid #e6e9ef;
+    position: fixed;  /* already fixed for scroll hide */
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    transition: top 0.3s ease, padding 0.3s ease;
+    padding: 8px 0; /* make the header slimmer (was 14px) */
+}
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0; /* reduce padding inside */
 }
 
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 0;
-}
 
 .nav {
   display: flex;
