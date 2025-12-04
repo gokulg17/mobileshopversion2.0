@@ -24,3 +24,20 @@ window.open(`https://wa.me/919876543210?text=${text}`, '_blank');
 });
 }
 });
+
+
+let lastScrollY = window.scrollY;
+
+window.addEventListener("scroll", () => {
+    const header = document.querySelector("header");
+
+    if (window.scrollY > lastScrollY) {
+        // Scrolling Down → Hide Header
+        header.classList.add("hide");
+    } else {
+        // Scrolling Up → Show Header
+        header.classList.remove("hide");
+    }
+
+    lastScrollY = window.scrollY;
+});

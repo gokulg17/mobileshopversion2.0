@@ -264,3 +264,16 @@ img {
     display: none;
   }
 }
+
+
+/* Auto-Hide Header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  transition: top 0.3s ease;
+}
+header.hide {
+  top: -120px; /* Move header up when hiding */
+}
